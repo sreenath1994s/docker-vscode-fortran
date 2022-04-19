@@ -14,9 +14,3 @@ RUN apk add --no-cache gdb
 RUN apk add --no-cache python3 py3-pip
 RUN pip install -U setuptools
 RUN pip install fortran-language-server
-RUN apk add --no-cache openssh
-RUN ssh-keygen -A
-# use foo user for ssh login
-RUN adduser -D naoe5
-RUN echo naoe5:osaka | chpasswd
-CMD ["/usr/sbin/sshd","-D"]
