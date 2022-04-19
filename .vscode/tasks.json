@@ -1,0 +1,26 @@
+// Updated by sreenaths 18/04/2022
+{
+    "version": "2.0.0",
+    "tasks": [
+
+        {
+            "label": "compile_for_debug",
+            "type": "shell",
+            "command": "gfortran -g -o debug.run Duffing-parallel.f90",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+
+        {
+            "label": "compile_for_release",
+            "type": "shell",
+            "command": "gfortran -O3 -o release.run Duffing-parallel.f90 -fopenmp",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        }
+
+    ]
+
+}
